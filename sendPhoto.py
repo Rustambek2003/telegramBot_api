@@ -6,21 +6,22 @@ TOKEN = os.environ['TOKEN']
 def sendPhoto(chat_id:str,photo:str):
     URL = f'https://api.telegram.org/bot{TOKEN}/sendPhoto'
     param = {
-        'chat_id':chat_id
-        # 'photo':photo
+        'chat_id':chat_id,
+        'photo':photo
     }
     files = {
         'photo':photo
     }
-    r = requests.post(url=URL,params=param,files=files)
+    # r = requests.post(url=URL,params=param,files=files)
+    r = requests.get(url=URL,params=param)
     print(r.json())
 
 
-chat_id ='5575549228'
+chat_id ='996172963'
 
-photo_url='https://random.dog/2bff25d0-c721-4078-8cc9-f3ce6b464428.jpg'
-photo_id = 'AgACAgIAAxkDAAMgY7evYvSyDJQ8DS-1S5Irjcd9cIgAAoa_MRvjDsFJ4H7lvD-PEXwBAAMCAAN4AAMtBA'
+photo_url='https://random.dog/15038-13875-14202.jpg'
+photo_id = 'AgACAgIAAxkBAAMnY7ezjNMhfqkXJVOM8XxpgB8LoSEAAu3BMRvK3LlJTc69b5lsz8EBAAMCAAN5AAMtBA'
 
 img = open('logo.jpg','rb').read()
 
-sendPhoto(chat_id=chat_id,photo=img)
+sendPhoto(chat_id=chat_id,photo=photo_id)
