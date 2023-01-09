@@ -1,33 +1,35 @@
-# import os 
-# import requests
 
-# TOKEN = os.environ['TOKEN']
+import os 
+import requests
 
-# def sendMessage(chat_id:str,text:str):
-#     URL = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
-#     button = [
-#     {
-#         'text':'button'
-#     },
-#     {
-#         'text':'21'
-#     },
-#     {
-#         'text':'Home'
-#     }
-#     ]
-#     keyboard =  [[button[0]],[button[0]]]
-#     reply_markup = {
-#         'keyboard':keyboard
-#     }
+TOKEN = os.environ['TOKEN']
 
-#     payload = {
-#         'chat_id':chat_id,
-#         'text':'Salom',
-#         'reply_markup':reply_markup
-#     }
-#     r = requests.get(url=URL,json=payload)
+def sendMessage(chat_id:str,text:str):
+    URL = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+    button = [
+    {
+        'text':'12'
+    },
+    {
+        'text':'21'
+    },
+    {
+        'text':'Home'
+    }
+    ]
+    keyboard =  [[button[0]],[button[0]]]
+    reply_markup = {
+        'keyboard':keyboard
+    }
 
-# chat_id ='996172963'
+    payload = {
+        'chat_id':chat_id,
+        'text':'Salom',
+        'reply_markup':reply_markup
+    }
+    r = requests.get(url=URL,json=payload)
 
-# sendMessage(chat_id=chat_id,text='Salom')
+chat_id ='996172963'
+
+sendMessage(chat_id=chat_id,text='Salom')
+

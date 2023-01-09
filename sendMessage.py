@@ -1,20 +1,17 @@
-# import requests
-# def sendMssage(chat_id,photo):
-#     TOKEN = '5766174948:AAFPOJO7Udzs9sAwjnb67LBjsNmubxIm5rQ'
-#     BASE_URL = f'https://api.telegram.org/bot{TOKEN}/sendPhoto'
+import os
 
-#     param = {
-#         'chat_id':chat_id,
-#         'photo':photo
-#     }
-#     files = {
-#         'photo':photo
-#     }
+import requests
 
-#     data = requests.get(url=BASE_URL, params=param)
-#     print(data.json())
-# # photo = 'https://random.dog/15038-13875-14202.jpg'
-# photo = "AgACAgIAAxkBAAMnY7ezjNMhfqkXJVOM8XxpgB8LoSEAAu3BMRvK3LlJTc69b5lsz8EBAAMCAAN5AAMtBA"
-# imj = open('logo.jpg','rb').read()
-# print(sendMssage(996172963, photo))
+TOKEN = os.environ['TOKEN']
 
+def sendMessage(chat_id:str,text:str):
+    URL = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+    param = {
+        'chat_id':chat_id,
+        'text':'Salom'
+    }
+    r = requests.get(url=URL,params=param)
+    
+chat_id ='996172963'
+
+sendMessage(chat_id=chat_id,text='Salom')
